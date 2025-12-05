@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block titulo %} Página Principal {% endblock titulo %}
+{% block conteudo %}
+<style>
+    .btn{
+        background-color: #9c73df;
+    }
+    body{
+        background-image: url('static/img/backgroundalbum.png') !important;
+    }
+    h1{
+        color:#9c73df
+    }
+</style>
+<audio autoplay loop>
+    <source src="{{ url_for('static', filename='sound/album.mp3') }}" type="audio/mpeg">
+</audio>
+<h1 class="titulo">OPE - Omori Photography Exhibition</h1>
+
+<div class="container">
+    <div class="row g-4"> 
+        {% for item in info %}
+        <div class="col-6 col-md-4 col-lg-2"> 
+            <div class="card h-100">
+                <img src="{{item.foto}}" class="card-img-top" alt="Foto">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.nome}}</h5>
+                    <p class="card-text">{{item.desc}}</p>
+                    <a href="{{ url_for('front_controller.edit', foto_id=loop.index0) }}" class="btn "><img src="static/img/editar.png" style="width: 50px; height: 30px;"></a>
+                    <form action="{{ url_for('front_controller.delete_foto', foto_id=loop.index0) }}" method="POST" style="display:inline;">
+                        <button  type="submit" class="btn"><img src="static/img/apagar.png" style="width: 50px; height: 30px;"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock conteudo%}

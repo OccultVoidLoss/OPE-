@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block titulo %} Página Principal {% endblock titulo %}
+{% block conteudo %}
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='img/editbackground.png') }}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            width: 350px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .login-box h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-box .btnlog {
+            width: 100%;
+            padding: 10px;
+            background-color: #6c0ffe;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-box .btnlog:hover {
+            background-color:#6c0ffe;
+        }
+    </style>
+    <div class="login-box">
+        <h1>Editar Foto {{foto_id}}</h1>
+        <hr>
+        <form action="{{url_for('front_controller.edit_foto', foto_id=foto_id)}}" method="POST">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">Descrição:</label>
+                <input type="text" class="form-control" id="desc" name="desc" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btnlog">Finalizar</button>
+        </form>
+    </div>
+{% endblock conteudo %}

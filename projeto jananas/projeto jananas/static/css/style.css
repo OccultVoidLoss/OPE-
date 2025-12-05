@@ -1,0 +1,173 @@
+/* Estilo global */
+body {
+    background-image: url("../img/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Estilo da navbar */
+nav {
+    background-color: #000000;
+    padding: 1rem 2rem;
+}
+h1{
+    font-family: 'omori';
+    font-size: 70px !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #6c0ffe !important;
+}
+
+/* Estilo dos links da navbar */
+a.navbar-brand {
+    margin-right: 20px;
+    font-family: 'omori';
+    font-size: 50px;
+}
+
+/* Botão de logout */
+form button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #6c0ffe;
+}
+
+/* Ajuste para o carrossel */
+.carousel-item img {
+    width: 200px; /* Tamanho fixo das imagens */
+    height: 200px; /* Tamanho fixo das imagens */
+    margin: 0 auto; /* Centraliza as imagens */
+    display: block; /* Garante que a imagem seja tratada como um bloco */
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar ou distorcer */
+}
+
+/* Ajuste no carrossel para caber as imagens pequenas */
+.carousel-inner {
+    max-height: 500px; /* Tamanho menor para o carrossel */
+}
+
+/* Legenda do carrossel embaixo da imagem */
+.carousel-caption {
+    position: static !important; /* Remove posição absoluta */
+    transform: none !important;
+    margin-top: 10px; /* Espaço entre imagem e texto */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.carousel-item {
+    text-align: center;
+}
+
+/* Ajustes para o título */
+h1.titulo {
+    text-align: center;
+    font-size: 3rem;
+    margin: 2rem 0;
+
+}
+
+/* Ajuste para melhorar a visibilidade dos alertas */
+.alert {
+    background-color: #34495e;
+    color: white;
+    border-radius: 5px;
+}
+
+.alert .btn-close {
+    background-color: transparent;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-item img {
+        width: 80px; /* Menor tamanho de imagem para telas pequenas */
+        height: 80px;
+    }
+
+    .carousel-inner {
+        max-height: 120px; /* Ajusta o tamanho do carrossel para telas menores */
+    }
+
+    h1.titulo {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+
+    /* Para a legenda no carrossel em telas pequenas */
+    .carousel-caption {
+        margin-top: 10px; /* Menos distância em telas pequenas */
+    }
+}
+
+@font-face {
+    font-family: 'omori'; /* Define the name of your font */
+    src: url('/static/fonts/font.ttf'); /* Flask serves files from /static */
+}
+
+/* Apply the custom font to <p> and <h5> elements */
+p, h5 {
+    color: black !important;
+}
+
+/* Custom styling for carousel control icons (Next and Previous buttons) */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #6c0ffe; /* Cor de fundo do ícone (apenas o círculo de fundo) */
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg); /* Ajusta a cor do ícone */
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: transparent; /* Fundo transparente nos botões */
+    border: none; /* Sem borda nos botões */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 40px; /* Tamanho do ícone */
+    height: 40px; /* Tamanho do ícone */
+    border-radius: 50%; /* Torna o ícone redondo */
+}
+/* Caixa de fundo preta translúcida para textos */
+.text-box {
+    background: rgba(0, 0, 0, 0.6); /* preto com transparência */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: center;
+    color: white !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+    
+.text-box h2 {
+    font-family: 'omori', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white !important;
+}
+
+.text-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white !important;
+}
+
