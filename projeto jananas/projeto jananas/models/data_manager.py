@@ -17,11 +17,14 @@ def load_data():
 
 def quote_get():
     quotes = []
-    resp = requests.get("https://type.fit/api/quotes")
+    url = "https://api.api-ninjas.com/v1/loremipsum?paragraphs=1&max_length=10"
+    headers = {"X-Api-Key": "zp6GyOGDnj0Ku8A7n8msdQ==a8vTfXQGIvx6KKEx"}
+    resp = requests.get(url,headers=headers)
+    
     dados = resp.json()
+    text = dados["text"]
     for i in range(20):  
-        quote = random.choice(dados)["text"]
-        quotes.append(quote)
+        quotes.append(text)
     return quotes
 
 def save_info(info):
